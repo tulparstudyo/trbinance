@@ -1,5 +1,5 @@
 {
-    "name": "tulparstudyo/microservice",
+    "name": "tulparstudyo/trbinance",
     "type": "library",
     "description": "Binance Türkiye API Sınıfı",
     "keywords": [
@@ -29,8 +29,5 @@
         "psr-4": {
             "Tulpar\\": "lib"
         }
-    },
-    "bin": [
-        "bin/php-parse"
-    ]
+    }
 }
