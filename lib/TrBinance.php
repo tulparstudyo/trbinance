@@ -21,7 +21,6 @@ class TrBinance extends Tulpar
         return self::_ReturnError('Başarısız');
     }
     public static function order($symbol, $side, $type, $quantity=0, $price=0, $flags = []){
-
         /**
          * side 0 Buy
          * side 1 Sell
@@ -121,9 +120,9 @@ class TrBinance extends Tulpar
             if (function_exists('curl_init') === false) {
                 throw new \Exception("Sorry cURL is not installed!");
             }
-            $ts = (microtime(true) * 1000) + self::TIMEOFFSET;
+            $t = request()->input('t', 0);
+            $ts = (microtime(true) * 1000) + (self::TIMEOFFSET*1000);
             $params['timestamp'] = number_format($ts, 0, '.', '');
-
             $curl = curl_init();
             $headers = [
                 'Cache-Control: no-cache',
